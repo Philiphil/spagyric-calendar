@@ -6,8 +6,6 @@
 </template>
 
 <script>
-import { useI18n } from 'vue-i18n'
-
 export default {
   name: 'ElementSwitch',
   props: {
@@ -24,12 +22,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-.dayname{
-  text-transform: capitalize;
-}
-
-</style>

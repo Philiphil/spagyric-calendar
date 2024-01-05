@@ -42,5 +42,16 @@
     "2": "Summer",
     "3": "Autumn",
     "4": "Winter"
+  },
+
+  "moonPhase": {
+    "0": "New Moon",
+    "1": "Vaxing Crescent",
+    "2": "First Quarter",
+    "3": "Vaxing Gibbous",
+    "4": "Full Moon",
+    "5": "Vaning Gibbous",
+    "6": "Last Quarter",
+    "7": "Vaning Crescent"
   }
 }

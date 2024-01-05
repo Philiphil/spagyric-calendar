@@ -14,28 +14,44 @@
       <planet-switch :favorable="day.PlanetState().mercury" :ruler=6 />
     </div>
     <div v-if="day.EquinoxDay() !== 0">
+      <span v-if="day.EquinoxDay()===1">♈︎︎</span>
+      <span v-else-if="day.EquinoxDay()===2">♋︎</span>
+      <span v-else-if="day.EquinoxDay()===3">♎︎</span>
+      <span v-else-if="day.EquinoxDay()===4">♑︎</span>
       {{t("season."+day.EquinoxDay())}}
     </div>
     <div class="moon">
       <div class="moonlogo">☽</div>
       <p>
-        {{t( "zodiac."+day.planets.moon.zodiac )}}
-        <span v-if="day.planets.moon.zodiac ===0">&#9800;</span>
-        <span v-else-if="day.planets.moon.zodiac ===1">&#9801;</span>
-        <span v-else-if="day.planets.moon.zodiac ===2">&#9802;</span>
-        <span v-else-if="day.planets.moon.zodiac ===3">&#9803;</span>
-        <span v-else-if="day.planets.moon.zodiac ===4">&#9804;</span>
-        <span v-else-if="day.planets.moon.zodiac ===5">&#9805;</span>
-        <span v-else-if="day.planets.moon.zodiac ===6">&#9806;</span>
-        <span v-else-if="day.planets.moon.zodiac ===7">&#9807;</span>
-        <span v-else-if="day.planets.moon.zodiac ===8">&#9808;</span>
-        <span v-else-if="day.planets.moon.zodiac ===9">&#9809;</span>
-        <span v-else-if="day.planets.moon.zodiac ===10">&#9810;</span>
-        <span v-else>&#9811;</span>
+        {{t( "moonPhase."+day.planets.moon.phase )}}
+        <span v-if="day.planets.moon.phase ===0">🌑︎︎</span>
+        <span v-else-if="day.planets.moon.phase ===1">🌒︎︎;</span>
+        <span v-else-if="day.planets.moon.phase ===2">🌓︎︎</span>
+        <span v-else-if="day.planets.moon.phase ===3">🌔︎︎</span>
+        <span v-else-if="day.planets.moon.phase ===4">🌕︎︎</span>
+        <span v-else-if="day.planets.moon.phase ===5">🌖︎︎</span>
+        <span v-else-if="day.planets.moon.phase ===6">🌗︎︎</span>
+        <span v-else-if="day.planets.moon.phase ===7">🌘︎︎</span>
+
       </p>
       <p>{{t( "trajectory."+day.planets.moon.trajectory )}}
         <span v-if="day.planets.moon.trajectory ===1">☽</span>
         <span v-else>☾</span>
+      </p>
+      <p>
+        {{t( "zodiac."+day.planets.moon.zodiac )}}
+        <span v-if="day.planets.moon.zodiac ===0">♈︎</span>
+        <span v-else-if="day.planets.moon.zodiac ===1">♉︎;</span>
+        <span v-else-if="day.planets.moon.zodiac ===2">♊︎</span>
+        <span v-else-if="day.planets.moon.zodiac ===3">♋︎</span>
+        <span v-else-if="day.planets.moon.zodiac ===4">♌︎</span>
+        <span v-else-if="day.planets.moon.zodiac ===5">♍︎</span>
+        <span v-else-if="day.planets.moon.zodiac ===6">♎︎</span>
+        <span v-else-if="day.planets.moon.zodiac ===7">♏︎</span>
+        <span v-else-if="day.planets.moon.zodiac ===8">♐︎</span>
+        <span v-else-if="day.planets.moon.zodiac ===9">♑︎</span>
+        <span v-else-if="day.planets.moon.zodiac ===10">♒︎</span>
+        <span v-else>♓︎︎</span>
       </p>
       <p>
         {{t( "planette."+day.planets.moon.ruler )}}

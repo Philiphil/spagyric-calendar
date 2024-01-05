@@ -122,6 +122,7 @@ class MoonInfo {
         this.zodiac = moonInfo.zodiac;
         this.trajectory = moonInfo.trajectory;
         this.element = zodiacToElement( this.zodiac )
+        this.phase = moonInfo.phase
 
         switch (this.zodiac) {
             case Zodiac.Virgo:

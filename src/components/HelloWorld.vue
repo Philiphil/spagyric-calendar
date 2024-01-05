@@ -79,7 +79,7 @@ export default {
   methods:{
     calendar(e){
       e.preventDefault()
-      if(this.ruler===0){
+      if(0 == this.ruler){
         this.range=script.GetAstroDaysInRange(
             DateTime.fromISO(this.start).setZone(getNearestTimezone(this.latitude,this.longitude)),
             DateTime.fromISO(this.end).setZone(getNearestTimezone(this.latitude,this.longitude)),

@@ -42,5 +42,15 @@
     "2": "été",
     "3": "Automne",
     "4": "Hiver"
+  },
+  "moonPhase": {
+    "0": "Nouvelle Lune",
+    "1": "Premier Croissant",
+    "2": "Premier Quartier",
+    "3": "Gibbeuse Croissante",
+    "4": "Pleine Lune",
+    "5": "Gibbeuse Décroissante",
+    "6": "Dernier Quartier",
+    "7": "Dernier Croissant"
   }
 }
