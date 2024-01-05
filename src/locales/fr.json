@@ -52,5 +52,14 @@
     "5": "Gibbeuse Décroissante",
     "6": "Dernier Quartier",
     "7": "Dernier Croissant"
+  },
+  "day": {
+    "1": "Lundi",
+    "2": "Mardi",
+    "3": "Mecredi",
+    "4": "Jeudi",
+    "5": "Vendredi",
+    "6": "Samedi",
+    "7": "Dimanche"
   }
 }

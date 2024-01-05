@@ -6,7 +6,6 @@ import Ruler from "@/script/ruler";
 import Period from "@/script/period";
 import {Element} from "@/script/element";
 import GetPlanetInfo from "@/script/astronomy";
-import getSeasons from "./seasons.js";
 
 function hourToElement(hour){
     if(hour < 7){
@@ -18,6 +17,7 @@ function hourToElement(hour){
     }
     return Element.Terre
 }
+
 class AstroDay {
     constructor() {
         this.hours = [];
@@ -157,7 +157,7 @@ class AstroDay {
         astroDay.ruler = Ruler.GetFromDayHour(Ruler.FromDateTime(day.toFormat("c")), 0);
         astroDay.nightRuler = Ruler.GetFromDayHour( astroDay.ruler, 12);
         astroDay.planets = GetPlanetInfo(day)
-        astroDay.season = getSeasons(astroDay.date.year)
+        astroDay.season = GetSeasons(astroDay.date.year)
 
         let fixedSunCaldDay =day.plus({hours:1})
         let result = SunCalc.getTimes(fixedSunCaldDay.toJSDate(), lat, lng);
@@ -187,7 +187,7 @@ class AstroDay {
                 end,
                 Ruler.GetFromDayHour(jour, i),
                 Period.Day,
-                hourToElement(i),
+                hourToElement(i+1),
                 astroDay,
             )
             astroDay.hours.push(hour);
@@ -207,7 +207,7 @@ class AstroDay {
                 end,
                 Ruler.GetFromDayHour(jour, i + 12),
                 Period.Night,
-                hourToElement(i+12),
+                hourToElement(i+15),
                 astroDay,
             )
 

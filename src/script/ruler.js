@@ -47,8 +47,19 @@ const Ruler = {
         return period===Period.Day ? this.getDayRelation(day,hour):this.getNightRelation(day,hour)
     },
     getDayRelation: function (day, hour) {
-        //if (day < hour) return Favorable.Unfavorable; depend de ce que je souahite travailler
-
+/*
+        - Samedi, jour de Saturne, il vaut mieux ne pas utiliser Jupiter ou Mercure.
+        - Dimanche, jour du Soleil, ne pas utiliser Mars.
+        - Lundi, jour de la Lune, pas de planète hostile.
+        - Mardi, jour de Mars, ne pas utiliser le Soleil.
+        - Mercredi, jour de Mercure, ne pas utiliser Saturne.
+        - Jeudi, jour de Jupiter, ne pas utiliser Saturne.
+        - Vendredi, jour de Vénus, pas de planète hostile.
+            Par contre, il y a des combinaisons favorables :
+            - Lundi, Mercure est en sympathie.
+        - Mercredi, Lune ou Soleil sont en sympathie.
+        - Vendredi, le Soleil est en sympathie.
+            */
         if (day === this.Saturn && (hour === this.Jupiter || hour === this.Mercury)) return Favorable.Unfavorable;
         if (day === this.Sun && hour === this.Mars) return Favorable.Unfavorable;
         if (day === this.Mars && hour === this.Sun) return Favorable.Unfavorable;

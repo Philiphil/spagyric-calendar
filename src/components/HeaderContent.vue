@@ -1,10 +1,9 @@
 <template>
   <th>
-
-      <p class="dayname"> <ruler-switch :element="day.ruler" />
-        {{name}}<br>{{day.date.toLocaleString()}}
+      <p class="dayname">
+        <ruler-switch :element="day.ruler" />
+        {{t("day."+day.date.toFormat("c"))}}<br>{{day.date.toLocaleString()}}
       </p>
-
     <div>
       <planet-switch :favorable="day.PlanetState().saturn" :ruler=1 />
       <planet-switch :favorable="day.PlanetState().jupiter" :ruler=2 />
@@ -14,11 +13,11 @@
       <planet-switch :favorable="day.PlanetState().mercury" :ruler=6 />
     </div>
     <div v-if="day.EquinoxDay() !== 0">
+      {{t("season."+day.EquinoxDay())}}
       <span v-if="day.EquinoxDay()===1">♈︎︎</span>
       <span v-else-if="day.EquinoxDay()===2">♋︎</span>
       <span v-else-if="day.EquinoxDay()===3">♎︎</span>
       <span v-else-if="day.EquinoxDay()===4">♑︎</span>
-      {{t("season."+day.EquinoxDay())}}
     </div>
     <div class="moon">
       <div class="moonlogo">☽</div>
@@ -109,10 +108,6 @@ export default {
        }
       return this.element
     },
-    name(){
-      return Info.weekdays('long')[this.day.date.toFormat("c")-1]
-    }
-
   },
   setup() {
     const { t } = useI18n({
