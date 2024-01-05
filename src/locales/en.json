@@ -1,0 +1,46 @@
+{
+  "zodiac": {
+    "0": "Aries",
+    "1": "Taurus",
+    "2": "Gemini",
+    "3": "Cancer",
+    "4": "Leo",
+    "5": "Virgo",
+    "6": "Libra",
+    "7": "Scorpio",
+    "8": "Sagittarius",
+    "9": "Capricorn",
+    "10": "Aquarius",
+    "11": "Pisces"
+  },
+  "trajectory": {
+    "0": "Descending",
+    "1": "Ascending"
+  },
+  "element": {
+    "0": "Earth",
+    "1": "Water",
+    "2": "Air",
+    "3": "Fire"
+  },
+  "planet": {
+    "1": "Saturn",
+    "2": "Jupiter",
+    "3": "Mars",
+    "4": "Sun",
+    "5": "Venus",
+    "6": "Mercury",
+    "7": "Moon"
+  },
+  "favorable": {
+    "0": "Neutral",
+    "1": "Favorable",
+    "2": "Unfavorable"
+  },
+  "season": {
+    "1": "Spring",
+    "2": "Summer",
+    "3": "Autumn",
+    "4": "Winter"
+  }
+}

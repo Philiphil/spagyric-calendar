@@ -1,0 +1,46 @@
+{
+  "zodiac": {
+    "0": "Belier",
+    "1": "Taureau",
+    "2": "Gemeaux",
+    "3": "Cancer",
+    "4": "Lion",
+    "5": "Vierge",
+    "6": "Balance",
+    "7": "Scorpion",
+    "8": "Sagitaire",
+    "9": "Capricorne",
+    "10": "Verseau",
+    "11": "Poisson"
+  },
+  "trajectory": {
+    "0": "Descendante",
+    "1": "Ascendante"
+  },
+  "element": {
+    "0": "Terre",
+    "1": "Eau",
+    "2": "Air",
+    "3": "Feu"
+  },
+  "planette": {
+    "1":"Saturne",
+    "2":"Jupiter",
+    "3":"Mars",
+    "4":"Soleil",
+    "5":"Venus",
+    "6":"Mercure",
+    "7":"Lune"
+  },
+  "favorable":{
+    "0": "Neutre",
+    "1": "Favorable",
+    "2": "Defavorable"
+  },
+  "season": {
+    "1": "Printemps",
+    "2": "été",
+    "3": "Automne",
+    "4": "Hiver"
+  }
+}
