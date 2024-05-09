@@ -14,7 +14,6 @@
       </p>
       <p>
         <em>
-          {{t("planette."+astroHour.ruler)}}<br>
           <ruler-switch :element="astroHour.ruler" />
         </em>
       </p>

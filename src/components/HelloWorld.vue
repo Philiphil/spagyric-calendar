@@ -159,4 +159,8 @@ td div.flexcontainer > p.date > span:nth-child(3){
 tbody tr:last-child td div p.date span:nth-child(3){
   opacity: 1;
 }
+
+thead{
+  height: 100%;
+}
 </style>

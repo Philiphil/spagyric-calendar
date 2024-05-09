@@ -1,68 +1,71 @@
 <template>
   <th>
-      <p class="dayname">
-        <ruler-switch :element="day.ruler" />
-        {{t("day."+day.date.toFormat("c"))}}<br>{{day.date.toLocaleString()}}
-      </p>
-    <div>
-      <planet-switch :favorable="day.PlanetState().saturn" :ruler=1 />
-      <planet-switch :favorable="day.PlanetState().jupiter" :ruler=2 />
-      <planet-switch :favorable="day.PlanetState().mars" :ruler=3 />
-      <planet-switch :favorable="day.PlanetState().sun" :ruler=4 />
-      <planet-switch :favorable="day.PlanetState().venus" :ruler=5 />
-      <planet-switch :favorable="day.PlanetState().mercury" :ruler=6 />
-    </div>
-    <div v-if="day.EquinoxDay() !== 0">
-      {{t("season."+day.EquinoxDay())}}
-      <span v-if="day.EquinoxDay()===1">♈︎︎</span>
-      <span v-else-if="day.EquinoxDay()===2">♋︎</span>
-      <span v-else-if="day.EquinoxDay()===3">♎︎</span>
-      <span v-else-if="day.EquinoxDay()===4">♑︎</span>
-    </div>
-    <div class="moon">
-      <div class="moonlogo">☽</div>
-      <p>
-        {{t( "moonPhase."+day.planets.moon.phase )}}
-        <span v-if="day.planets.moon.phase ===0">🌑︎︎</span>
-        <span v-else-if="day.planets.moon.phase ===1">🌒︎︎;</span>
-        <span v-else-if="day.planets.moon.phase ===2">🌓︎︎</span>
-        <span v-else-if="day.planets.moon.phase ===3">🌔︎︎</span>
-        <span v-else-if="day.planets.moon.phase ===4">🌕︎︎</span>
-        <span v-else-if="day.planets.moon.phase ===5">🌖︎︎</span>
-        <span v-else-if="day.planets.moon.phase ===6">🌗︎︎</span>
-        <span v-else-if="day.planets.moon.phase ===7">🌘︎︎</span>
+        <div>
+          <p class="dayname">
+            <ruler-switch :element="day.ruler" />
+            {{t("day."+day.date.toFormat("c"))}}<br>{{day.date.toLocaleString()}}
+          </p>
+          <div>
+            <planet-switch :favorable="day.PlanetState().saturn" :ruler=1 />
+            <planet-switch :favorable="day.PlanetState().jupiter" :ruler=2 />
+            <planet-switch :favorable="day.PlanetState().mars" :ruler=3 />
+            <planet-switch :favorable="day.PlanetState().sun" :ruler=4 />
+            <planet-switch :favorable="day.PlanetState().venus" :ruler=5 />
+            <planet-switch :favorable="day.PlanetState().mercury" :ruler=6 />
+          </div>
+          <div v-if="day.EquinoxDay() !== 0">
+            {{t("season."+day.EquinoxDay())}}
+            <span v-if="day.EquinoxDay()===1">♈︎︎</span>
+            <span v-else-if="day.EquinoxDay()===2">♋︎</span>
+            <span v-else-if="day.EquinoxDay()===3">♎︎</span>
+            <span v-else-if="day.EquinoxDay()===4">♑︎</span>
+          </div>
+        </div>
+      <div class="moon">
+        <div class="moonlogo">☽</div>
+        <p>
+          {{t( "moonPhase."+day.planets.moon.phase )}}
+          <span v-if="day.planets.moon.phase ===0">🌑︎︎</span>
+          <span v-else-if="day.planets.moon.phase ===1">🌒︎︎</span>
+          <span v-else-if="day.planets.moon.phase ===2">🌓︎︎</span>
+          <span v-else-if="day.planets.moon.phase ===3">🌔︎︎</span>
+          <span v-else-if="day.planets.moon.phase ===4">🌕︎︎</span>
+          <span v-else-if="day.planets.moon.phase ===5">🌖︎︎</span>
+          <span v-else-if="day.planets.moon.phase ===6">🌗︎︎</span>
+          <span v-else-if="day.planets.moon.phase ===7">🌘︎︎</span>
 
-      </p>
-      <p>{{t( "trajectory."+day.planets.moon.trajectory )}}
-        <span v-if="day.planets.moon.trajectory ===1">☽</span>
-        <span v-else>☾</span>
-      </p>
-      <p>
-        {{t( "zodiac."+day.planets.moon.zodiac )}}
-        <span v-if="day.planets.moon.zodiac ===0">♈︎</span>
-        <span v-else-if="day.planets.moon.zodiac ===1">♉︎;</span>
-        <span v-else-if="day.planets.moon.zodiac ===2">♊︎</span>
-        <span v-else-if="day.planets.moon.zodiac ===3">♋︎</span>
-        <span v-else-if="day.planets.moon.zodiac ===4">♌︎</span>
-        <span v-else-if="day.planets.moon.zodiac ===5">♍︎</span>
-        <span v-else-if="day.planets.moon.zodiac ===6">♎︎</span>
-        <span v-else-if="day.planets.moon.zodiac ===7">♏︎</span>
-        <span v-else-if="day.planets.moon.zodiac ===8">♐︎</span>
-        <span v-else-if="day.planets.moon.zodiac ===9">♑︎</span>
-        <span v-else-if="day.planets.moon.zodiac ===10">♒︎</span>
-        <span v-else>♓︎︎</span>
-      </p>
-      <p>
-        {{t( "planette."+day.planets.moon.ruler )}}
+        </p>
+        <p>{{t( "trajectory."+day.planets.moon.trajectory )}}
+          <span v-if="day.planets.moon.trajectory ===1">☽</span>
+          <span v-else>☾</span>
+        </p>
+        <p>
+          {{t( "zodiac."+day.planets.moon.zodiac )}}
+          <span v-if="day.planets.moon.zodiac ===0">♈︎</span>
+          <span v-else-if="day.planets.moon.zodiac ===1">♉︎</span>
+          <span v-else-if="day.planets.moon.zodiac ===2">♊︎</span>
+          <span v-else-if="day.planets.moon.zodiac ===3">♋︎</span>
+          <span v-else-if="day.planets.moon.zodiac ===4">♌︎</span>
+          <span v-else-if="day.planets.moon.zodiac ===5">♍︎</span>
+          <span v-else-if="day.planets.moon.zodiac ===6">♎︎</span>
+          <span v-else-if="day.planets.moon.zodiac ===7">♏︎</span>
+          <span v-else-if="day.planets.moon.zodiac ===8">♐︎</span>
+          <span v-else-if="day.planets.moon.zodiac ===9">♑︎</span>
+          <span v-else-if="day.planets.moon.zodiac ===10">♒︎</span>
+          <span v-else>♓︎︎</span>
+        </p>
+        <p>
+          {{t( "planette."+day.planets.moon.ruler )}}
           <ruler-switch :element="day.planets.moon.ruler" />
           <favorable-switch :element="day.planets.moon.favorable" />
-      </p>
-      <p>
-        {{t( "element."+day.planets.moon.element )}}
-        <element-switch :element="day.planets.moon.element" />
-      </p>
-    </div>
+        </p>
+        <p>
+          {{t( "element."+day.planets.moon.element )}}
+          <element-switch :element="day.planets.moon.element" />
+        </p>
+      </div>
   </th>
+
 </template>
 
 <script>
@@ -144,4 +147,12 @@ export default {
 th{
   border:1px solid black;
 }
+
+
+
+th > div{
+  flex: 1;
+}
+
+
 </style>
