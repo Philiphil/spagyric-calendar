@@ -21,49 +21,6 @@
             <span v-else-if="day.EquinoxDay()===4">♑︎</span>
           </div>
         </div>
-      <div class="moon">
-        <div class="moonlogo">☽</div>
-        <p>
-          {{t( "moonPhase."+day.planets.moon.phase )}}
-          <span v-if="day.planets.moon.phase ===0">🌑︎︎</span>
-          <span v-else-if="day.planets.moon.phase ===1">🌒︎︎</span>
-          <span v-else-if="day.planets.moon.phase ===2">🌓︎︎</span>
-          <span v-else-if="day.planets.moon.phase ===3">🌔︎︎</span>
-          <span v-else-if="day.planets.moon.phase ===4">🌕︎︎</span>
-          <span v-else-if="day.planets.moon.phase ===5">🌖︎︎</span>
-          <span v-else-if="day.planets.moon.phase ===6">🌗︎︎</span>
-          <span v-else-if="day.planets.moon.phase ===7">🌘︎︎</span>
-
-        </p>
-        <p>{{t( "trajectory."+day.planets.moon.trajectory )}}
-          <span v-if="day.planets.moon.trajectory ===1">☽</span>
-          <span v-else>☾</span>
-        </p>
-        <p>
-          {{t( "zodiac."+day.planets.moon.zodiac )}}
-          <span v-if="day.planets.moon.zodiac ===0">♈︎</span>
-          <span v-else-if="day.planets.moon.zodiac ===1">♉︎</span>
-          <span v-else-if="day.planets.moon.zodiac ===2">♊︎</span>
-          <span v-else-if="day.planets.moon.zodiac ===3">♋︎</span>
-          <span v-else-if="day.planets.moon.zodiac ===4">♌︎</span>
-          <span v-else-if="day.planets.moon.zodiac ===5">♍︎</span>
-          <span v-else-if="day.planets.moon.zodiac ===6">♎︎</span>
-          <span v-else-if="day.planets.moon.zodiac ===7">♏︎</span>
-          <span v-else-if="day.planets.moon.zodiac ===8">♐︎</span>
-          <span v-else-if="day.planets.moon.zodiac ===9">♑︎</span>
-          <span v-else-if="day.planets.moon.zodiac ===10">♒︎</span>
-          <span v-else>♓︎︎</span>
-        </p>
-        <p>
-          {{t( "planette."+day.planets.moon.ruler )}}
-          <ruler-switch :element="day.planets.moon.ruler" />
-          <favorable-switch :element="day.planets.moon.favorable" />
-        </p>
-        <p>
-          {{t( "element."+day.planets.moon.element )}}
-          <element-switch :element="day.planets.moon.element" />
-        </p>
-      </div>
   </th>
 
 </template>
@@ -137,12 +94,6 @@ export default {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   border: 1px solid rgba(100,100,100,0.1);
-}
-.moonlogo{
-  position: absolute;
-  z-index: -1;
-  font-size: 50px;
-  opacity: 0.1;
 }
 th{
   border:1px solid black;

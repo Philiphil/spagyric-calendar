@@ -13,4 +13,7 @@ const Zodiac = {
     Pisces: 11,
 };
 
+
+var sign = Number(new Intl.DateTimeFormat('fr-TN-u-ca-persian', {month: 'numeric'}).format(Date.now())) - 1;
+console.debug((sign))
 export default Zodiac;

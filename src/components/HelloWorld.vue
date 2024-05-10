@@ -11,6 +11,9 @@
         to : <input type="date"  v-model="this.end">
       </div>
       <br>
+      <SelectPlant/>
+
+
       <select  v-model="this.ruler">
         <option value="0" selected></option>
         <option value="1">{{t("planette.1")}}</option>
@@ -30,6 +33,11 @@
         <header-content v-for="col in getDay" v-bind:key="col" :element="col" />
       </thead>
       <tbody>
+      <tr>
+        <moon-case v-for="col in getDay" v-bind:key="col"
+                      :element=col
+        />
+      </tr>
         <tr v-for="n in 24" :key="n">
             <case-content v-for="col in getHours" v-bind:key="col"
                           :element=col[n-1]
@@ -48,17 +56,20 @@ import {DateTime,Info} from "luxon";
 import { useI18n } from 'vue-i18n'
 import CaseContent from "@/components/CaseContent";
 import HeaderContent from "@/components/HeaderContent";
+import MoonCase from "@/components/MoonCase.vue";
+import SelectPlant from "@/components/SelectPlant.vue";
+
 
 export default {
   name: 'HelloWorld',
-  components: {HeaderContent, CaseContent},
+  components: {SelectPlant, MoonCase, HeaderContent, CaseContent},
   setup() {
     const { t } = useI18n({
       inheritLocale: true,
       useScope: 'local'
     })
     return {
-      t,
+      t
     };
   },
   data:function (){
@@ -68,13 +79,24 @@ export default {
       start:"1970-01-01",
       end:"1970-01-01",
       range:[],
-      ruler:0
+      ruler:0,
+      selectedPlant:"",
     }
   },
   mounted() {
     let today = DateTime.now().toLocal()
     this.start = today.toFormat("yyyy-LL-dd")
     this.end = today.plus({days:7}).toFormat("yyyy-LL-dd")
+
+
+    navigator.geolocation.getCurrentPosition(pos => {
+      this.latitude=pos.coords.latitude
+      this.longitude=pos.coords.longitude
+
+    }, err => {
+      reject(err);
+    });
+
   },
   methods:{
     calendar(e){
@@ -95,7 +117,7 @@ export default {
             this.ruler
         )
       }
-    }
+    },
   },
   computed:{
     getCols(){

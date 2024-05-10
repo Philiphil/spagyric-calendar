@@ -1,5 +1,3 @@
-import Ruler from "@/script/ruler";
-
 const {DateTime} = require("luxon");
 
 const K=Math.PI/180.0;
